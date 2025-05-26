@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Note Web</title>
+</head>
+<body>
+    <h1>Привет, {{.Author}}</h1>
+
+    <h2>Добавить новую заметку:</h2>
+    <form method="POST" action="/">
+        <input type="text" name="note" placeholder="Введите заметку" required>
+        <button type="submit">Добавить</button>
+    </form>
+
+    <h2>Мои заметки:</h2>
+    <ul>
+        {{range .Notes}}
+        <li>{{.}}</li>
+        {{else}}
+        <li>Нет заметок</li>
+        {{end}}
+    </ul>
+</body>
+</html>
